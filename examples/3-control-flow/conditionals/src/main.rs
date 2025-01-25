@@ -8,7 +8,23 @@ fn cond(){
     }
 }
 
+fn iflet(){
+    let mut maybe_number = Some(42);
+
+    match maybe_number {
+        Some(ref mut val) => *val += 10,
+        None => (),
+    }
+
+    if let Some(number) = maybe_number {
+        println!("Number: {}", number);
+    } else {
+        println!("No number");
+    }
+}
+
 fn main() {
     cond();
+    iflet();
     println!("Hello, world!");
 }
